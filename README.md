@@ -1,11 +1,5 @@
 <h2 align="center">This Repository consists of some intermediate and advanced python topics with basic examples.📖🔖 </h2>
 
-<div align="center">
-  <a href="https://github.com/kanstat">
-  <img  src="https://github.com/kanstat/Advance-Python/blob/main/snake.svg"
-       alt="snake" /></a>
-</div>
-
 ## Advanced Python Concepts
 This repository contains examples and explanations of advanced Python concepts, including decorators, generators, context managers, asyncio, closures, and more. These concepts are powerful tools for writing clear, concise, and efficient Python code.
 
