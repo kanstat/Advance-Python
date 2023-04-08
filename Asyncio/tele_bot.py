@@ -8,9 +8,10 @@ import json
 global msg_update_list  
 msg_updateid_list = []
 
-url = f'{BASE_URL}/getUpdates'
-def get_updates(base_url):
-    response = requests.get(base_url)
+
+def get_updates():
+    url = f'{BASE_URL}/getUpdates'
+    response = requests.get(url)
     response = response.text
     response = json.loads(response)
     for itm in response["result"]:
@@ -34,5 +35,6 @@ def send_message(chat_id, text):
         
         
 
-r = get_updates(url)    
-print(r)
+if __name__ == "__main":
+    r = get_updates()    
+    print(r)
