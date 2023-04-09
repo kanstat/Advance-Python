@@ -8,3 +8,4 @@ TG_API = os.getenv("TG_API")
 
 BASE_URL = f"https://api.telegram.org/bot{TG_API}"
 
+NEWS_API = os.getenv("NEWS_API") 
