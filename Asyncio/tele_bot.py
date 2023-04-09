@@ -1,11 +1,11 @@
-from time import sleep
 from constants_ import BASE_URL
 import requests
 import json
+from headlines import get_topheadlines
 
 
 
-
+ 
 global msg_updateid_list  
 msg_updateid_list = []
 
@@ -52,14 +52,16 @@ def send_message():
             text_to_user = "start, welcome to my news bot."      
             send_url = f"{BASE_URL}/sendMessage?chat_id={chat_id}&text={text_to_user}"
             res = requests.post(send_url)
-        elif user_txt == "hello":
-            text_to_user = "Hello, welcome to my news bot."      
+        elif user_txt == "/news":
+            text_to_user_lst = get_topheadlines()   
+            for text_to_user in text_to_user_lst:   
+                send_url = f"{BASE_URL}/sendMessage?chat_id={chat_id}&text={text_to_user}"
+                res = requests.post(send_url)
+        else:
+            text_to_user = "Please choose options from menu."      
             send_url = f"{BASE_URL}/sendMessage?chat_id={chat_id}&text={text_to_user}"
             res = requests.post(send_url)
-        elif user_txt == "hii":
-            text_to_user = "hii, welcome to my news bot."      
-            send_url = f"{BASE_URL}/sendMessage?chat_id={chat_id}&text={text_to_user}"
-            res = requests.post(send_url)
+            
             # sleep(0.3)
 
 if __name__ == "__main__":
