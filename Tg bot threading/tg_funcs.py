@@ -1,6 +1,6 @@
 import json
 import requests
-from const import TGURL,NEWSURL
+from const import TGURL
 from news_funcs import get_news
 import threading
 from threading import Lock
