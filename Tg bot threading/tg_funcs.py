@@ -42,16 +42,23 @@ def sender_func():
             
             if usr_txt == "hello" or "/start":
                 txt_to_snd = "Welcome to my bot, please send '/news' for some latest top news headlines" 
-                threading.Thread(target=send_msg,args=(chat_id,txt_to_snd),name="snd_msg1").start()     
+                threading.Thread(target=send_all_msgs,args=(chat_id,txt_to_snd),name="snd_msg1").start()     
             if usr_txt == "/news":
-                txt_to_snd = get_news() 
-                threading.Thread(target=send_msg,args=(chat_id,*txt_to_snd),name="snd_msg2").start()
+                txt_to_snd_lst = get_news() 
+                print(*txt_to_snd_lst)
+                threading.Thread(target=send_all_msgs,args=(chat_id,*txt_to_snd_lst),name="snd_msg2").start()
                 
               
-def send_msg(chat_id,*args):
+def send_msg(chat_id,txt_to_snd):
     try:
-        for text_to_send in args:
-            requests.post(f"{TGURL}/sendMessage?chat_id={chat_id}&text={text_to_send}")
+       requests.post(f"{TGURL}/sendMessage?chat_id={chat_id}&text={txt_to_snd}")
+    except Exception as e:
+        print(e)
+
+def send_all_msgs(chat_id,*args):
+    try:
+        for msg_to_snd in args:
+            threading.Thread(target=send_msg,args=(chat_id,msg_to_snd),name="send_all_msg")
     except Exception as e:
         print(e)
                 
