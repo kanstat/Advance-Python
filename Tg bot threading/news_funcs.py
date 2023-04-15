@@ -8,6 +8,7 @@ global titles_lst
 titles_lst = []
 
 def get_news():
+    titles_lst = []
     news_url = f"{NEWSURL}"
     resp = requests.get(news_url)
     resp = json.loads(resp.text)
