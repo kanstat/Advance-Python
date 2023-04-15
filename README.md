@@ -21,4 +21,8 @@ Closures are a way to create functions that have access to variables from their 
 ### Contributions
 Contributions to this repository are welcome! If you have examples, explanations, or best practices for any of these advanced Python concepts, please feel free to submit a pull request.
 
+### Projects
+1. Telegram News Bot
+
+
 
