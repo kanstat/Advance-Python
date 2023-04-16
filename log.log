@@ -1,0 +1,4 @@
+2023-04-16 18:53:30,726 - root - INFO - Added 2 and 3 to get 5
+2023-04-16 18:53:30,726 - root - INFO - Subtracted 1 from 5 to get 4
+2023-04-16 18:53:30,726 - root - INFO - Multiplied 4 by 6 to get 24
+2023-04-16 18:53:30,726 - root - ERROR - Attempted to divide by zero
